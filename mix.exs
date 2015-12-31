@@ -33,6 +33,7 @@ defmodule Weder.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:cowboy, "~> 1.0"},
      {:geocoder, "~> 0.3"},
+     {:poison, "~> 1.5"},
      {:geohash, github: "treetopllc/geohash"},
      {:darksky, github: "garman/darksky-elixir"}]
   end

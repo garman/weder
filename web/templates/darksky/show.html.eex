@@ -1,1 +1,30 @@
-<div><%= @forecast %></div>
+<div class="row">
+  <div class="col-md-4">
+    <h5>Current</h5>
+    <ul>
+      <%= for key <- Map.keys(@forecast.current) do %>
+        <li><%= key %>: <%= @forecast.current[key] %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="col-md-4">
+    <h5>Daily: <%= @forecast.daily.summary %></h5>
+    <%= for day <- @forecast.daily.data do %>
+      <ul>
+        <%= for key <- Map.keys(day) do %>
+          <li><%= key %>: <%= day[key] %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+  <div class="col-md-4">
+    <h5>Hourly: <%= @forecast.hourly.summary %></h5>
+    <%= for hour <- @forecast.hourly.data do %>
+      <ul>
+        <%= for key <- Map.keys(hour) do %>
+          <li><%= key %>: <%= hour[key] %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+</div>
